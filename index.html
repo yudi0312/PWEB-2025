@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Farming - 5x2 Layout</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --card-height: 120px;
+      --gap: 1rem;
+    }
+
+    body{
+      background:#f6f8fa;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    .container-heading{
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    .cards-grid{
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr)); 
+      gap: var(--gap);
+    }
+
+    @media (max-width: 1199.98px){ 
+      .cards-grid{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+    }
+    @media (max-width: 991.98px){ 
+      .cards-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+    }
+    @media (max-width: 767.98px){ 
+      .cards-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 575.98px){ 
+      .cards-grid{ grid-template-columns: repeat(1, minmax(0,1fr)); }
+    }
+
+    .sensor-card{
+      height: var(--card-height);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(30,40,50,0.06);
+      background: #fff;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sensor-title{
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    .sensor-value{
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+
+    .b-blue{ border-left: 6px solid #0d6efd; }
+    .b-green{ border-left: 6px solid #20c997; }
+    .b-yellow{ border-left: 6px solid #ffc107; }
+    .b-red{ border-left: 6px solid #dc3545; }
+    .b-teal{ border-left: 6px solid #17a2b8; }
+
+    .small-meta{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 0.72rem;
+      color: rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3 class="container-heading">Smart Farming</h3>
+
+    <div class="cards-grid">
+      <div class="sensor-card b-blue">
+        <div class="sensor-title">Kelembaban (RH)</div>
+        <div class="sensor-value text-primary">54 %</div>
+        <div class="small-meta"> </div>
+      </div>
+
+      <div class="sensor-card b-green">
+        <div class="sensor-title">TDS</div>
+        <div class="sensor-value text-success">400 ppm</div>
+      </div>
+
+      <div class="sensor-card b-teal">
+        <div class="sensor-title">Kekeruhan (Turbid)</div>
+        <div class="sensor-value text-info">18 NTU</div>
+      </div>
+
+      <div class="sensor-card b-yellow">
+        <div class="sensor-title">Temperatur Air (WTEMP)</div>
+        <div class="sensor-value text-warning">25 °C</div>
+      </div>
+
+      <div class="sensor-card b-red">
+        <div class="sensor-title">Aliran Air (WFLOW)</div>
+        <div class="sensor-value text-danger">34</div>
+      </div>
+
+      <div class="sensor-card b-blue">
+        <div class="sensor-title">Oksigen Terlarut</div>
+        <div class="sensor-value text-primary">10 ppm</div>
+      </div>
+
+      <div class="sensor-card b-green">
+        <div class="sensor-title">Intensitas Cahaya (LUX)</div>
+        <div class="sensor-value text-success">100 Lux</div>
+      </div>
+
+      <div class="sensor-card b-teal">
+        <div class="sensor-title">Temperatur Udara (AMTEMP)</div>
+        <div class="sensor-value text-info">34 °C</div>
+      </div>
+
+      <div class="sensor-card b-yellow">
+        <div class="sensor-title">EC</div>
+        <div class="sensor-value text-warning">2</div>
+      </div>
+
+      <div class="sensor-card b-red">
+        <div class="sensor-title">pH</div>
+        <div class="sensor-value text-danger">7.1</div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
